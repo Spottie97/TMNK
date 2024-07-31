@@ -1,13 +1,44 @@
 import React, { useState } from 'react';
+import { loadStripe } from '@stripe/stripe-js';
+
+const stripePromise = loadStripe('your-publishable-key-here');
 
 const BookingForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [service, setService] = useState('');
+  const [priceId, setPriceId] = useState('price_xxx'); // Replace with actual price ID
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission, possibly saving data to a backend or state management
+
+    // Save booking information if needed (e.g., to a database or state management)
+    const bookingData = {
+      name,
+      email,
+      service,
+      // Add more data if needed, like selected date
+    };
+
+    // Proceed to Stripe Checkout
+    const stripe = await stripePromise;
+    const response = await fetch('/api/create-checkout-session', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ priceId, serviceName: service }),
+    });
+
+    const session = await response.json();
+
+    const result = await stripe.redirectToCheckout({
+      sessionId: session.id,
+    });
+
+    if (result.error) {
+      console.error(result.error.message);
+    }
   };
 
   return (
@@ -54,7 +85,7 @@ const BookingForm = () => {
           className="bg-primary text-lightText px-4 py-2 rounded hover:bg-secondary"
           type="submit"
         >
-          Submit
+          Book and Pay
         </button>
       </form>
     </div>
