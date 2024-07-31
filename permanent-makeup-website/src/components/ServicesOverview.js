@@ -12,8 +12,8 @@ const ServicesOverview = () => {
       <h2 className="text-4xl font-semibold mb-10">Our Services</h2>
       <div className="flex flex-wrap justify-center">
         {services.map((service, index) => (
-          <div key={index} className="w-1/3 p-4">
-            <div className="bg-gray-100 p-6 rounded-lg">
+          <div key={index} className="w-full sm:w-1/2 md:w-1/3 p-4">
+            <div className="bg-gray-100 p-6 rounded-lg shadow-md">
               <h3 className="text-2xl font-medium mb-4">{service.name}</h3>
               <p className="text-gray-600">{service.description}</p>
             </div>
