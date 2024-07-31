@@ -7,12 +7,12 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <div className="testimonials">
-      <h2>Testimonials</h2>
+    <div className="py-20 bg-gray-200 text-center">
+      <h2 className="text-4xl font-semibold mb-10">Testimonials</h2>
       {testimonials.map((testimonial, index) => (
-        <div key={index} className="testimonial-item">
-          <p>"{testimonial.comment}"</p>
-          <h4>- {testimonial.name}</h4>
+        <div key={index} className="mb-8">
+          <p className="text-xl italic mb-4">"{testimonial.comment}"</p>
+          <h4 className="text-lg font-semibold">- {testimonial.name}</h4>
         </div>
       ))}
     </div>
