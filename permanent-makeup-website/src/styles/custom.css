@@ -36,3 +36,19 @@
 .portfolio-image:hover {
   transform: scale(1.05);
 }
+
+.navbar {
+  background-color: #4a4a4a; /* Example custom background color */
+}
+
+.navbar a {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-right: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #d6bcfa; /* Example hover color */
+}

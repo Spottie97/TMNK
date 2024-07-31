@@ -1,14 +1,25 @@
-// src/App.js
 import React from 'react';
-import './styles/global.css'; // Global Tailwind styles
-import './styles/custom.css'; // Custom styles
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
 import LandingPage from './pages/LandingPage';
+import AboutPage from './pages/AboutPage';
+import BookingPage from './pages/BookingPage';
+import './styles/global.css';
+import './styles/custom.css';
 
 function App() {
   return (
-    <div className="App">
-      <LandingPage />
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/booking" element={<BookingPage />} />
+          {/* Add routes for other pages */}
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
