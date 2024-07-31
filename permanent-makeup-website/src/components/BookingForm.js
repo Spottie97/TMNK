@@ -12,32 +12,28 @@ const BookingForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Save booking information if needed (e.g., to a database or state management)
-    const bookingData = {
-      name,
-      email,
-      service,
-      // Add more data if needed, like selected date
-    };
-
-    // Proceed to Stripe Checkout
     const stripe = await stripePromise;
-    const response = await fetch('/api/create-checkout-session', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ priceId, serviceName: service }),
-    });
 
-    const session = await response.json();
+    try {
+      const response = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ priceId, serviceName: service }),
+      });
 
-    const result = await stripe.redirectToCheckout({
-      sessionId: session.id,
-    });
+      const session = await response.json();
 
-    if (result.error) {
-      console.error(result.error.message);
+      const result = await stripe.redirectToCheckout({
+        sessionId: session.id,
+      });
+
+      if (result.error) {
+        console.error(result.error.message);
+      }
+    } catch (error) {
+      console.error('Error creating checkout session:', error);
     }
   };
 
