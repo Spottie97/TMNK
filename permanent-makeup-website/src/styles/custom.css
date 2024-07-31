@@ -1,31 +1,38 @@
 /* src/styles/custom.css */
 .custom-hero {
-    background: linear-gradient(to right, #6b46c1, #d6bcfa);
-    color: #fff;
-    padding: 4rem 0;
-  }
-  
-  .custom-hero-button {
-    background-color: #6b46c1;
-    color: #fff;
-    padding: 1rem 2rem;
-    border-radius: 1rem;
-    transition: background-color 0.3s;
-  }
-  
-  .custom-hero-button:hover {
-    background-color: #4c2a8a;
-  }
-  
-  .custom-cta-button {
-    background-color: #fff;
-    color: #6b46c1;
-    padding: 1rem 2rem;
-    border-radius: 1rem;
-    transition: background-color 0.3s;
-  }
-  
-  .custom-cta-button:hover {
-    background-color: #f3f3f3;
-  }
-  
+  background: linear-gradient(to right, #6b46c1, #d6bcfa);
+  color: #fff;
+  padding: 4rem 0;
+}
+
+.custom-hero-button {
+  background-color: #6b46c1;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  transition: background-color 0.3s;
+}
+
+.custom-hero-button:hover {
+  background-color: #4c2a8a;
+}
+
+.custom-cta-button {
+  background-color: #fff;
+  color: #6b46c1;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  transition: background-color 0.3s;
+}
+
+.custom-cta-button:hover {
+  background-color: #f3f3f3;
+}
+
+.portfolio-image {
+  transition: transform 0.3s;
+}
+
+.portfolio-image:hover {
+  transform: scale(1.05);
+}
