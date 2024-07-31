@@ -39,7 +39,7 @@ const BookingForm = () => {
 
   return (
     <div className="py-10 bg-lightBg text-center">
-      <h2 className="text-4xl font-semibold mb-4">Book Your Appointment</h2>
+      <h2 className="text-4xl font-semibold mb-4 text-primary">Book Your Appointment</h2>
       <form onSubmit={handleSubmit} className="w-full max-w-lg mx-auto">
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">

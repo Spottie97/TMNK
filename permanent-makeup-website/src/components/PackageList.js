@@ -29,7 +29,7 @@ const packages = [
 const PackageList = () => {
   return (
     <div className="py-10 bg-lightBg text-center">
-      <h2 className="text-4xl font-semibold mb-4">Our Packages</h2>
+      <h2 className="text-4xl font-semibold mb-4 text-primary">Our Packages</h2>
       <div className="flex flex-wrap justify-center">
         {packages.map((pkg, index) => (
           <PackageItem key={index} {...pkg} />

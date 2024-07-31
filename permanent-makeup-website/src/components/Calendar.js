@@ -6,14 +6,16 @@ const Calendar = () => {
   const [selectedDate, setSelectedDate] = useState(null);
 
   return (
-    <div className="py-10 bg-lightBg text-center">
-      <h2 className="text-4xl font-semibold mb-4">Select a Date</h2>
-      <DatePicker
-        selected={selectedDate}
-        onChange={(date) => setSelectedDate(date)}
-        inline
-        className="mx-auto"
-      />
+    <div className="py-10 bg-white text-center">
+      <h2 className="text-4xl font-semibold mb-4 text-primary">Select a Date</h2>
+      <div className="inline-block">
+        <DatePicker
+          selected={selectedDate}
+          onChange={(date) => setSelectedDate(date)}
+          inline
+          className="mx-auto"
+        />
+      </div>
     </div>
   );
 };
