@@ -4,6 +4,8 @@ import Navbar from './components/Navbar';
 import LandingPage from './pages/LandingPage';
 import AboutPage from './pages/AboutPage';
 import BookingPage from './pages/BookingPage';
+import Success from './pages/Success';
+import Cancel from './pages/Cancel';
 import './styles/global.css';
 import './styles/custom.css';
 
@@ -16,7 +18,8 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/booking" element={<BookingPage />} />
-          {/* Add routes for other pages */}
+          <Route path="/booking/success" element={<Success />} />
+          <Route path="/booking/cancel" element={<Cancel />} />
         </Routes>
       </div>
     </Router>
